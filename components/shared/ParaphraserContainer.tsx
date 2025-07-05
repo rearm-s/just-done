@@ -39,6 +39,7 @@ const ParaphraserContainer: React.FC<ParaphraserContainerProps> = ({ title, subt
       setInputText(text || '');
       setError(null);
     } catch (err) {
+      console.log('Error reading from clipboard:', err);
       setError('Could not read from clipboard.');
     }
   };
@@ -75,9 +76,14 @@ const ParaphraserContainer: React.FC<ParaphraserContainerProps> = ({ title, subt
       } else {
         setInputText(data?.result);
       }
-    } catch (err: any) {
-      const cleaned = cleanErrorMessage(err.message);
-      setError(cleaned);
+    } catch (err) {
+      if (err instanceof Error) {
+        const cleaned = cleanErrorMessage(err.message);
+        setError(cleaned);
+      } else {
+        const cleaned = cleanErrorMessage(String(err));
+        setError(cleaned);
+      }
     } finally {
       setLoading(false);
     }
