@@ -19,7 +19,7 @@ const StyledParaphraserInput = styled(TextareaAutosize)<{ value: string }>`
     overflow: auto;
     resize: none;
     transition: opacity 0.2s;
-    border-bottom: ${({ value }) => value === '' ? 'none' : '1px solid #DBDCDF'};
+    border-bottom: 1px solid #DBDCDF;
 
     &:focus-visible {
         outline: none;

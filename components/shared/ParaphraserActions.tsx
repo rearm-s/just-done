@@ -28,8 +28,9 @@ const ParaphraserActions: React.FC<ParaphraserActionsProps> = ({
           sx={{
             borderRadius: 10,
             textTransform: 'none',
-            backgroundColor: '#EEF0F5',
-            padding: '10px 16px',
+            backgroundColor: 'rgb(238, 240, 245)',
+            padding: '12px 16px',
+            color: 'rgb(37, 70, 153)',
           }}
         >
           Clear input
@@ -44,7 +45,12 @@ const ParaphraserActions: React.FC<ParaphraserActionsProps> = ({
         sx={{
           borderRadius: 10,
           textTransform: 'none',
-          padding: '10px 16px',
+          padding: '12px 16px',
+          backgroundColor: 'rgb(37, 70, 153)',
+
+          '&:hover': {
+            boxShadow: 'none',
+          },
 
           '&.Mui-disabled': {
             color: '#FFFFFF',
