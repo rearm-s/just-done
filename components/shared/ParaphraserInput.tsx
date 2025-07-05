@@ -16,7 +16,7 @@ const StyledParaphraserInput = styled(TextareaAutosize)<{ value: string }>`
     min-height: 100%;
     max-height: 336px;
     width: 100%;
-    overflow: auto;
+    overflow-y: auto;
     resize: none;
     transition: opacity 0.2s;
     border-bottom: 1px solid #DBDCDF;
@@ -40,6 +40,7 @@ const ParaphraserInput: React.FC<ParaphraserInputProps> = ({ value, onChange, di
     onChange={e => onChange(e.target.value)}
     placeholder="Enter text here or upload file to humanize it."
     disabled={disabled}
+    minRows={6}
   />
 );
 
