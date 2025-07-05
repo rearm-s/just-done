@@ -31,6 +31,7 @@ const ParaphraserActions: React.FC<ParaphraserActionsProps> = ({
             backgroundColor: 'rgb(238, 240, 245)',
             padding: '12px 16px',
             color: 'rgb(37, 70, 153)',
+            fontWeight: '600',
           }}
         >
           Clear input
@@ -47,8 +48,15 @@ const ParaphraserActions: React.FC<ParaphraserActionsProps> = ({
           textTransform: 'none',
           padding: '12px 16px',
           backgroundColor: 'rgb(37, 70, 153)',
+          boxShadow: 'none',
+          transition: 'filter 0.3s ease',
 
           '&:hover': {
+            boxShadow: 'none',
+            filter: 'contrast(1.5)',
+          },
+
+          '&:focus': {
             boxShadow: 'none',
           },
 
